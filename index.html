@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Result Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Student Result Management System</h1>
+      <p class="lead">Add students, then add their course results one at a time.</p>
+      <img class="logo" src="NWUpic.jpeg" alt="logo">
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <h2>Add Student</h2>
+        <form id="add-student-form">
+          <label>
+            Student name
+            <input type="text" id="student-name" placeholder="e.g. Full name" />
+          </label>
+          <label>
+            Matric number
+            <input type="text" id="student-matric" placeholder="e.g. UG24ICT0000" />
+          </label>
+          <button type="submit">Add Student</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Selected Student</h2>
+        <label>
+          Choose student
+          <select id="student-select">
+            <option value="">-- No student yet --</option>
+          </select>
+        </label>
+
+        <div id="student-info" class="hidden">
+          <p><strong>Name:</strong> <span id="info-name"></span></p>
+          <p><strong>Matric:</strong> <span id="info-matric"></span></p>
+          <p>
+            <button id="delete-student-btn" class="danger">Delete Student</button>
+          </p>
+
+          <h3>Add Course Result</h3>
+          <form id="add-result-form">
+            <label>
+              Course name
+              <input type="text" id="course-name" placeholder="e.g. Calculus I" />
+            </label>
+            <label>
+              Course code
+              <input type="text" id="course-code" placeholder="e.g. MTH101" />
+            </label>
+            <label>
+              Score (0-100)
+              <input type="number" id="course-score" min="0" max="100" />
+            </label>
+            <button type="submit">Add Result</button>
+          </form>
+
+          <h3>Results</h3>
+          <div class="table-wrap">
+            <table id="results-table">
+              <thead>
+                <tr>
+                  <th>Course code</th>
+                  <th>Course name</th>
+                  <th>Score</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- rows inserted here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="summary">
+            <p><strong>Total score:</strong> <span id="total-score">0</span></p>
+            <p><strong>Average score:</strong> <span id="avg-score">0</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Simple, beginner-friendly app — I used no frameworks.</p>
+      <p>by Aminu Shehu</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
